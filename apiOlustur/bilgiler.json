@@ -1,0 +1,18 @@
+{
+    "telefon": [
+      { "id": 1,  "model": "s20",  "fiyat": 20000, "kategori_id":"2"},
+      { "id": 2,  "model": "iphone11",  "fiyat": 19000, "kategori_id":"1"},
+      { "id": 3,  "model": "s10",  "fiyat": 18000, "kategori_id":"4"},
+      { "id": 4,  "model": "s21",  "fiyat": 17000, "kategori_id":"4"},
+      { "id": 5,  "model": "via3",  "fiyat": 16000, "kategori_id":"3"},
+      { "id": 6,  "model": "iphone8",  "fiyat": 15000, "kategori_id":"1"},
+      { "id": 7,  "model": "s22+",  "fiyat": 14000, "kategori_id":"2"}
+    ],
+    "markalar": [
+      { "id": 1, "marka": "apple", "description": "iyi telefon" }, 
+      { "id": 2, "marka": "samsung", "description": "üst düzey teknoloji" },
+      { "id": 3, "marka": "casper", "description": "2.sınıf telefon" },
+      { "id": 4, "marka": "oppo", "description": "yeni telefon" }
+    ]
+    
+  }

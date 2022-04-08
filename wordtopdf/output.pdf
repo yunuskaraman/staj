@@ -1,0 +1,1 @@
+soffice --headless --convert-to .pdfC:\Users\YunusKARAMAN\Desktop\Kodlama\Node.js\wordtopdf\output.docx --outdirC:\Users\YunusKARAMAN\Desktop\Kodlama\Node.js\wordtopdf\output.pdf
