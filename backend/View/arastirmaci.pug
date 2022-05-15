@@ -1,0 +1,63 @@
+extends layouts/main.pug
+
+block content
+
+ div.container.pt-100
+    div.row
+        
+        div.col-sm-3
+
+            ul.menu
+                li
+                    p Araştırmacı
+
+                    ul.group
+                       
+                        if arastirmaciBilgiler.length > 0
+                            each arastirmaci in arastirmaciBilgiler
+
+                                li
+                                    p id : #{arastirmaci.arastirmaci_id}
+                                    p #{arastirmaci.adi_soyadi}
+
+                        else 
+                            li
+                                p araştırmacı bulunamadı.
+        div.col-sm-3
+            ul.menu
+                li
+                    p Yayinlar
+
+                    ul.group
+                        if arastirmaciBilgiler.length > 0
+                            each yayin in yayinBilgiler
+
+                                li
+                                    p id : #{yayin.yayin_id}
+                                    p #{yayin.yayin_adi}
+
+                        else 
+                            li
+                                p araştırmacı bulunamadı.
+        div.col-sm-4.pt
+            
+            form(action="/admin/arastirmaci" method="POST") 
+                label( for="arastirmaci_id").col-sm-7.col-form-label Araştırmacı İd
+                div.form-group.row.my-2
+                    div.col-sm-10
+                        input( type="text" name="arastirmaci_id").form-control#arastirmaci_id
+
+                label( for="arastirmaci_adi").col-sm-7.col-form-label Araştırmacı Adi Soyadi
+                div.form-group.row.my-2
+                    div.col-sm-10
+                        input( type="text" name="arastirmaci_adi").form-control#arastirmaci_adi
+
+                label( for="yayin_id").col-sm-7.col-form-label Yayin İd
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="yayin_id").form-control#yayin_id
+
+                div.form-group.row     
+                    div.col-sm-10.offset-sm-7.mt-2
+                        input(type="submit" value="Kaydet").btn.btn-primary
+                        

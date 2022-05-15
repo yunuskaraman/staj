@@ -1,0 +1,52 @@
+.pt-100{
+    padding-top: 100px;
+}
+.pt-100 .card{
+    width: 20rem;
+}
+a {
+    text-decoration: none;
+}
+ul.menu{
+    background-color: #16a085;
+    height: 50px;
+    list-style: none;
+}
+ul.menu > li {
+    float: left;
+    height: 50px;
+    list-style: none;
+    position: relative;
+}
+ul.menu > li > p {
+    display: block;
+    font-size: 40px;
+    color: #fff;
+    padding: 0 15;
+    line-height: 50px;
+   
+}
+
+ul.menu ul {
+    background:#1abc9c;
+    width: 250px;
+    list-style: none;
+    position:absolute;
+    opacity: 0;
+    transition: 500ms all;
+    visibility: hidden;
+    top: 50px;
+    height: 300px;
+    overflow: scroll;
+}
+ul.menu ul li p {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 25px;
+    
+}
+ul.menu >li:hover ul {
+    visibility: visible;
+    opacity: 1;
+}

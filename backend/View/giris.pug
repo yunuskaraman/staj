@@ -1,0 +1,31 @@
+extends layouts/main.pug
+block content
+ div.container.pt-100
+    
+    div.row
+        
+        div.col
+        
+        div.col.pt-100
+            
+            form(action="/admin/giris" method="POST") 
+                
+                div.form-group.row.my-2
+                    label( for="kullanici_adi").col-sm-2.col-form-label Kullanıcı adı
+                    div.col-sm-10
+                        input( type="text" name="kullanici_adi").form-control#kullanici_adi
+                div.form-group.row
+                    label( for="sifre").col-sm-2.col-form-label Şifre
+                    div.col-sm-10
+                        input( type="password" name="sifre").form-control#sifre
+                div.form-group.row     
+                    div.col-sm-10.offset-sm-2.mt-2
+                        input(type="submit" value="Giriş Yap").btn.btn-primary
+        div.col
+    div.row
+    
+        div.col
+        div.col
+            if message
+                div.alert.alert-danger.col-sm #{message}
+        div.col

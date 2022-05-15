@@ -1,0 +1,66 @@
+extends layouts/main.pug
+block content
+ div.container.pt-100
+    div.row
+        
+        div.col-sm-3
+
+            ul.menu
+                li
+                    p Yayınlar
+
+                    ul.group
+                       
+                        if yayinBilgiler.length > 0
+                            each yayin in yayinBilgiler
+
+                                li
+                                    p id : #{yayin.yayin_id}
+                                    p #{yayin.yayin_adi}
+
+                        else 
+                            li
+                                p araştırmacı bulunamadı.
+        div.col-sm-3
+            ul.menu
+                li
+                    p Türler
+
+                    ul.group
+                        if turBilgiler.length > 0
+                            each tur in turBilgiler
+
+                                li
+                                    p id : #{tur.tur_id}
+                                    p #{tur.tur_adi}
+
+                        else 
+                            li
+                                p araştırmacı bulunamadı.
+            
+        div.col.pt-50
+            
+            form(action="/admin/yayin" method="POST") 
+                label( for="yayin_id").col-form-label Yayin id
+                div.form-group.row.my-2
+                    div.col-sm-10
+                        input( type="text" name="yayin_id").form-control#yayin_id
+                label( for="yayin_adi").col-form-label Yayın Adı
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="yayin_adi").form-control#yayin_adi
+                label( for="yil").col-form-label Yayın Yılı
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="yil").form-control#yil
+                label( for="yer").col-form-label Yayın Yeri
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="yer").form-control#yer
+                label( for="tur_id").col-form-label Tur İd
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="tur_id").form-control#tur_id
+                div.form-group.row     
+                    div.col-sm-10.offset-sm-7.mt-2
+                        input(type="submit" value="Kaydet").btn.btn-primary

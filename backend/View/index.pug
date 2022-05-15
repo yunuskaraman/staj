@@ -1,0 +1,43 @@
+extends layouts/main.pug
+block content
+ div.container.mt-5
+    
+    div.row        
+        div.col
+            
+            form(action="/" method="POST") 
+                
+                div.row
+                    div.col.sm-3
+                        //label( for="arastirmaci_adi").col-form-label Araştırmacı adı soyadı
+                        div.form-group.row.mt-2
+                            
+                            div.col-sm-10
+                                input( type="text" name="arastirmaci_adi",placeholder="Araştırmacı Adı").form-control#arastirmaci_adi
+                    div.col.sm-3
+                            //label( for="yayin_adi").col-form-label Yayın adı
+                            div.form-group.row
+                                
+                                div.col-sm-10.mt-2
+                                    input( type="text" name="yayin_adi",placeholder="Yayın Adı").form-control#yayin_adi
+                    div.col.sm-3
+                        //label( for="yayin_yili").col-form-label Yayın yılı
+                        div.form-group.row
+                            
+                            div.col-sm-10.mt-2
+                                input( type="text" name="yayin_yili",placeholder="Yayın Yılı").form-control#yayin_yili
+                    div.col.sm-3
+                        div.form-group.row     
+                            div.col-sm-10.offset-sm-7.mt-2
+                                input(type="submit" value="Yayını Bul").btn.btn-primary
+    div.row.mt-5
+        if yayinBilgiler.length > 0
+            each yayin in yayinBilgiler
+                div.card.mt-2
+                    div.card-body
+                        h5.card-title Arastırmacı Adı : #{arastirmaci}
+                        h6.card-subtitle.mb-2.text-muted Yayin yılı #{yayin.yil}
+                        p.card-text Yayin Adi : #{yayin.yayin_adi}
+                        p.card-yer yayın yeri : #{yayin.yer}
+        else 
+            h1 Yayin Bulunamadı.

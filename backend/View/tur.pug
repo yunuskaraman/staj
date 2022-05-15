@@ -1,0 +1,23 @@
+extends layouts/main.pug
+block content
+ div.container.pt-100
+    
+    div.row
+        
+        div.col
+        
+        div.col.pt-100
+            
+            form(action="/admin/tur" method="POST") 
+                label( for="tur_id").col-form-label Tur id
+                div.form-group.row.my-2
+                    div.col-sm-10
+                        input( type="text" name="tur_id").form-control#tur_id
+                label( for="tur_adi").col-form-label Tur Adi
+                div.form-group.row
+                    div.col-sm-10
+                        input( type="text" name="tur_adi").form-control#tur_adi
+                div.form-group.row     
+                    div.col-sm-10.offset-sm-7.mt-3
+                        input(type="submit" value="Kaydet").btn.btn-primary
+        div.col
